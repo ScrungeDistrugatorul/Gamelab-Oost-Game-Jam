@@ -9,9 +9,9 @@ public class PlayerMovementR : MonoBehaviour
     [SerializeField] private float jumpStrength;
     private float HorizontalSpeed;
     private float VerticalSpeed;
-    private Vector3 move;
+    public Vector3 move;
     
-    private Rigidbody rb;
+    public Rigidbody rb;
     public Vector3 floorNormal;
 
     [SerializeField] private float groundDrag;
@@ -19,7 +19,7 @@ public class PlayerMovementR : MonoBehaviour
     [SerializeField] private LayerMask IsGround;
     [SerializeField] private float GroundCheckRad;
 
-    [SerializeField] private Camera camera;
+    public Camera camera;
     [SerializeField] private Vector3 camOffset;
 
     private BallOrientation orientation;
