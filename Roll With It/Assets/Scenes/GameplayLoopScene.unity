@@ -939,7 +939,6 @@ MonoBehaviour:
   trashPrefabs:
   - {fileID: 6150041397181360831, guid: e3f20b4e2e53fb24d86c0b2031d5576b, type: 3}
   totalTrash: 0
-  spawnAmount: 0
 --- !u!1 &1160234425
 GameObject:
   m_ObjectHideFlags: 0
