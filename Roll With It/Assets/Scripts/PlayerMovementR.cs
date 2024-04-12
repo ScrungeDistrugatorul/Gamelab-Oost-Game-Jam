@@ -60,14 +60,7 @@ public class PlayerMovementR : MonoBehaviour
             DebugScale(-0.2f);
         }
 
-        if (Input.GetKeyDown("e"))
-        {
-            
-        }
 
-        camera.transform.position = transform.position + camOffset;
-
-        Debug.Log($"Velocity {rb.velocity.magnitude}");
     }
 
     private void FixedUpdate()

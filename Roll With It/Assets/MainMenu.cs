@@ -21,4 +21,9 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Main Menu");
         SceneManager.LoadScene(0);
     }
+
+    public void AddSense(float sens)
+    {
+        PlayerPrefs.SetFloat("sens", sens);
+    }
 }
