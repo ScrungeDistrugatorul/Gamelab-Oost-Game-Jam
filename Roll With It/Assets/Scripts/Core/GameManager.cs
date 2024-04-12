@@ -95,6 +95,11 @@ public class GameManager : MonoBehaviour
         instance.highscore += highscore;
     }
 
+    public static int GetHighscore()
+    {
+        return instance.highscore;
+    }
+
     public int GetTimeScore()
     {
         return (int)(instance.timeInSecs * instance.timeLeftMultiplier);

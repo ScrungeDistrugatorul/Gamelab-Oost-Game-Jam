@@ -6,8 +6,9 @@ public class TrashCan : MonoBehaviour
 {
     [Header("Trash Can Info")]
     [SerializeField] private int trashAmount;
+    public int TrashAmount { get => trashAmount; }
     [SerializeField] private int totalTrash;
-    public int TotalTrash { set => totalTrash = value; }
+    public int TotalTrash { get => trashAmount; set => totalTrash = value; }
 
     [Header("Trash Can Settings")]
     [SerializeField] private Transform collectTransform;
