@@ -12,7 +12,7 @@ public class PlayerMovementR : MonoBehaviour
     private Vector3 move;
     
     private Rigidbody rb;
-    private Vector3 floorNormal;
+    public Vector3 floorNormal;
 
     [SerializeField] private float groundDrag;
     [SerializeField] private float airDrag;
@@ -22,7 +22,11 @@ public class PlayerMovementR : MonoBehaviour
     [SerializeField] private Camera camera;
     [SerializeField] private Vector3 camOffset;
 
-    private void Awake() {
+    private BallOrientation orientation;
+
+    private void Awake()
+    {
+        orientation = GetComponentInChildren<BallOrientation>();
     }
 
     private void Start()
@@ -97,7 +101,7 @@ public class PlayerMovementR : MonoBehaviour
         }
     }
 
-    private bool OnGround()
+    public bool OnGround()
     {
         return Physics.CheckSphere(transform.position - (Vector3.up * 0.5f), GroundCheckRad, IsGround);
     }
