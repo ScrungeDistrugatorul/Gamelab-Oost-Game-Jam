@@ -14,6 +14,6 @@ public class ScoreSetter : MonoBehaviour
         if (gm == null) return;
         score.text = gm.Highscore.ToString();
         time.text = gm.TimeLeft.ToString();
-        final.text = gm.Highscore + gm.GetTimeScore().ToString();
+        final.text = gm.GetFinalScore().ToString();
     }
 }
