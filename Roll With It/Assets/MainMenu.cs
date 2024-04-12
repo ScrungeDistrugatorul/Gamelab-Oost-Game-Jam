@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private void Start()
+    {
+        PlayerPrefs.SetFloat("sens", 0.5f);
+    }
+
     public void PlayGame()
     {
         Debug.Log("Scene Change");

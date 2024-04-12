@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,13 @@ public class TrashPickUp : MonoBehaviour
     [Header("Gizmos")]
     [SerializeField] private Color gizmoColor;
 
+    private PlayerMovementR player;
+
+    private void Awake()
+    {
+        player = GetComponent<PlayerMovementR>();
+    }
+
     private void Update()
     {
         PickUp();
@@ -30,7 +38,9 @@ public class TrashPickUp : MonoBehaviour
             if(col.TryGetComponent<IPickUpable>(out IPickUpable pickUpable))
             {
                 currentTrashAmount += pickUpable.PickUpable();
+                player.DebugScale(0.01f);
             }
+            
         }
     }
 

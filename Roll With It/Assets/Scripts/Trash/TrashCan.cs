@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,8 @@ public class TrashCan : MonoBehaviour
     [Header("Gizmos")]
     [SerializeField] private Color gizmoColor;
 
+    [SerializeField] private PlayerMovementR player;
+
     private void Update()
     {
         CollectTrash();
@@ -38,6 +41,8 @@ public class TrashCan : MonoBehaviour
 
                 GameManager.AddHighscore(trash * highscoreMultiplier);
                 trashPickUp.DeleteTrash();
+                
+                player.ResetScale();
 
                 if(totalTrash == trashAmount && trashAmount != 0)
                 {

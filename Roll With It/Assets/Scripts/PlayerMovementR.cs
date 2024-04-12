@@ -20,6 +20,8 @@ public class PlayerMovementR : MonoBehaviour
     [SerializeField] private LayerMask IsGround;
     [SerializeField] private float GroundCheckRad;
 
+    public int trashAmount = 0;
+
     public Camera camera;
 
     private BallOrientation orientation;
@@ -46,19 +48,19 @@ public class PlayerMovementR : MonoBehaviour
             rb.AddForce(floorNormal * jumpStrength);
         }
 
-        if (Input.GetKeyDown("r"))
-        {
-            DebugReset();
-        }
-
-        if (Input.GetKeyDown("1"))
-        {
-            DebugScale(0.2f);
-        }
-        if (Input.GetKeyDown("2"))
-        {
-            DebugScale(-0.2f);
-        }
+        // if (Input.GetKeyDown("r"))
+        // {
+        //     DebugReset();
+        // }
+        //
+        // if (Input.GetKeyDown("1"))
+        // {
+        //     DebugScale(0.2f);
+        // }
+        // if (Input.GetKeyDown("2"))
+        // {
+        //     DebugScale(-0.2f);
+        // }
 
 
     }
@@ -114,9 +116,14 @@ public class PlayerMovementR : MonoBehaviour
         transform.position = Vector3.zero;
     }
 
-    private void DebugScale(float scaleChange)
+    public void DebugScale(float scaleChange)
     {
         transform.localScale += Vector3.one * scaleChange;
+    }
+
+    public void ResetScale()
+    {
+        transform.localScale = Vector3.one;
     }
 
     private void OnCollisionEnter(Collision collision)

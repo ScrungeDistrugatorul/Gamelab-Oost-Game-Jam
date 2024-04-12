@@ -45,6 +45,9 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name != "MainScene") return;
         Timer();
         GameRun();
+        if (Input.GetKeyDown(KeyCode.Backspace))
+            EndGame();
+
     }
 
     private void GameRun()
