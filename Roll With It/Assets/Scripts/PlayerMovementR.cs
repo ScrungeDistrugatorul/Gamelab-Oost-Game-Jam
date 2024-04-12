@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,10 +10,10 @@ public class PlayerMovementR : MonoBehaviour
     [SerializeField] private float jumpStrength;
     private float HorizontalSpeed;
     private float VerticalSpeed;
-    public Vector3 move;
+    [NonSerialized] public Vector3 move;
     
-    public Rigidbody rb;
-    public Vector3 floorNormal;
+    [NonSerialized] public Rigidbody rb;
+    [NonSerialized] public Vector3 floorNormal;
 
     [SerializeField] private float groundDrag;
     [SerializeField] private float airDrag;
@@ -20,7 +21,6 @@ public class PlayerMovementR : MonoBehaviour
     [SerializeField] private float GroundCheckRad;
 
     public Camera camera;
-    [SerializeField] private Vector3 camOffset;
 
     private BallOrientation orientation;
 

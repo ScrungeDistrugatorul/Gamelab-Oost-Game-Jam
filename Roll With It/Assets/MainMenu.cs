@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,5 +26,6 @@ public class MainMenu : MonoBehaviour
     public void AddSense(float sens)
     {
         PlayerPrefs.SetFloat("sens", sens);
+        PlayerPrefs.Save();
     }
 }

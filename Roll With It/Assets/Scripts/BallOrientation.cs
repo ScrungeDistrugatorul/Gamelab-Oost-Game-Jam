@@ -27,23 +27,7 @@ public class BallOrientation : MonoBehaviour
 
     private void Update()
     {
-        switch (state)
-        {
-        case(State.Grounded):
-        //         transform.LookAt(new Vector3(-CamOrientation.transform.position.x, 0, -CamOrientation.transform.position.z), player.floorNormal);
-                // transform.rotation = Quaternion.Euler(player.rb.velocity.x, player.floorNormal.y, player.rb.velocity.z);
-                transform.forward = player.rb.velocity;
-                // transform.rotation = quaternion.Euler( new Vector3(0,0,player.floorNormal.z));
-                //transform.right = player.floorNormal;
-            break;
-            // case(State.Air):
-            //     Vector3 pos = transform.position;
-            //     transform.rotation = transform.parent.rotation;
-            //     transform.localPosition = pos;
-            //     state = State.Null;
-            //     break;
-            // default:
-            //     break;
-        }
+        if (player.rb.velocity.magnitude > 0)
+            transform.forward = player.rb.velocity;
     }
 }
