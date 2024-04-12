@@ -34,6 +34,16 @@ public class TrashPickUp : MonoBehaviour
         }
     }
 
+    public int GetTrash()
+    {
+        return currentTrashAmount;
+    }
+
+    public void DeleteTrash()
+    {
+        currentTrashAmount = 0;
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = gizmoColor;

@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class TrashSpawner : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] TrashCan trashCan;
+
+    [Header("Trash Can")]
     [SerializeField] private List<GameObject> trashPrefabs;
+    [SerializeField] private int totalTrash;
 
     private void Start()
     {
@@ -17,7 +22,10 @@ public class TrashSpawner : MonoBehaviour
                 int j = Random.Range(0, trashPrefabs.Count);
 
                 Instantiate(trashPrefabs[j], transform.GetChild(i).position, Quaternion.identity, transform.GetChild(i));
+                totalTrash++;
             }
         }
+
+        trashCan.TotalTrash = totalTrash;
     }
 }
