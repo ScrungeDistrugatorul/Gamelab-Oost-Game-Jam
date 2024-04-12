@@ -118,4 +118,10 @@ public class PlayerMovementR : MonoBehaviour
     {
         transform.localScale += Vector3.one * scaleChange;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Respawn"))
+            DebugReset();
+    }
 }
