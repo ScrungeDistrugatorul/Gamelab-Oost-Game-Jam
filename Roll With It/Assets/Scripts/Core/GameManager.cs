@@ -75,10 +75,6 @@ public class GameManager : MonoBehaviour
     {
         // Game Over - End Screen
 
-        // float timeHighScore = instance.timeInSecs * instance.timeLeftMultiplier;
-        // AddHighscore((int)timeHighScore);
-
-
         // Next Scene;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -95,8 +91,14 @@ public class GameManager : MonoBehaviour
         instance.highscore += highscore;
     }
 
-    public int GetTimeScore()
+    public int GetFinalScore()
     {
-        return (int)(instance.timeInSecs * instance.timeLeftMultiplier);
+        float timeScore = timeInSecs * timeLeftMultiplier;
+
+        int finalScore = (int)timeScore + highscore;
+
+        //Debug.Log(timeScore + "|" + highscore + "|" + finalScore);
+
+        return finalScore;
     }
 }
