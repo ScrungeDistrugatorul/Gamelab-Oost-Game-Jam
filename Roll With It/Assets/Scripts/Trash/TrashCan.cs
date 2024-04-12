@@ -39,7 +39,7 @@ public class TrashCan : MonoBehaviour
                 GameManager.AddHighscore(trash * highscoreMultiplier);
                 trashPickUp.DeleteTrash();
 
-                if(totalTrash == trashAmount)
+                if(totalTrash == trashAmount && trashAmount != 0)
                 {
                     GameManager.EndGame();
                 }

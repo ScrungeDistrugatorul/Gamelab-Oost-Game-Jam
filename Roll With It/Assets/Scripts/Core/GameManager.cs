@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float timer;
     [SerializeField] private float timeInSecs;
     [SerializeField] private float maxTimeInMin;
+
+    public int TimeLeft => (int)timeInSecs;
+    public int Highscore => highscore;
 
     private void Awake()
     {
@@ -38,13 +42,14 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (SceneManager.GetActiveScene().name != "MainScene") return;
         Timer();
         GameRun();
     }
 
     private void GameRun()
     {
-        if(timer == 0 || true)
+        if(timer == 0)
         {
             EndGame();
         }
@@ -70,11 +75,14 @@ public class GameManager : MonoBehaviour
     {
         // Game Over - End Screen
 
-        float timeHighScore = instance.timeInSecs * instance.timeLeftMultiplier;
-        AddHighscore((int)timeHighScore);
+        // float timeHighScore = instance.timeInSecs * instance.timeLeftMultiplier;
+        // AddHighscore((int)timeHighScore);
 
 
         // Next Scene;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        SceneManager.LoadScene("EndScene");
     }
 
     public static float GetTime()
@@ -85,5 +93,10 @@ public class GameManager : MonoBehaviour
     public static void AddHighscore(int highscore)
     {
         instance.highscore += highscore;
+    }
+
+    public int GetTimeScore()
+    {
+        return (int)(instance.timeInSecs * instance.timeLeftMultiplier);
     }
 }
