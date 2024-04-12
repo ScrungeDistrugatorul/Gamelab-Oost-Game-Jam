@@ -12,11 +12,9 @@ public class TrashSpawner : MonoBehaviour
     [SerializeField] private List<GameObject> trashPrefabs;
     [SerializeField] private int totalTrash;
 
-    public float spawnAmount;
-
     private void Start()
     {
-        spawnAmount = transform.childCount * (percentageAmountToSpawn / 100);
+         float spawnAmount = transform.childCount * (percentageAmountToSpawn / 100);
 
         for(int i = 0; i < transform.childCount; i++)
         {
