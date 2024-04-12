@@ -10,11 +10,11 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [Header("Highscore")]
-    [SerializeField] private int highscore;
+    public int highscore;
     [SerializeField] private float timeLeftMultiplier;
 
     [Header("Timer")]
-    [SerializeField] private float timer;
+    public float timer;
     [SerializeField] private float timeInSecs;
     [SerializeField] private float maxTimeInMin;
 
