@@ -1,4 +1,5 @@
 using System;
+using Cinemachine;
 using UnityEngine;
 
 public class ThirdPersonCam : MonoBehaviour
@@ -7,9 +8,13 @@ public class ThirdPersonCam : MonoBehaviour
     public Transform player;
     public Transform playerObj;
     public float rotationSpeed;
+    public CinemachineFreeLook cinemachine;
 
     private void Start()
     {
+        cinemachine.m_XAxis.m_MaxSpeed *= PlayerPrefs.GetFloat("sens");
+        cinemachine.m_YAxis.m_MaxSpeed *= PlayerPrefs.GetFloat("sens");
+        
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
